@@ -119,3 +119,22 @@ class AggressiveBot(Player):
                 return min(number_cards, key=lambda c: c.value)
         
         return random.choice(hand)
+    
+
+class ExitBot(Player):
+    """A bot that would rather quit than play."""
+    
+    def __init__(self, name: str = "QuitBot"):
+        super().__init__(name)
+        
+    
+    def make_bid(self, hand: List[Card], round_num: int, previous_bids: Dict[Player, int]) -> int:
+        """Make a random bid."""
+        
+        return random.randint(0, round_num)
+    
+    def play_card(self, hand: List[Card], current_trick: List[tuple], previous_tricks: List[list],
+                  bids: Dict[Player, int], tricks_won: Dict[Player, int], round_num: int) -> Card:
+        """Play a random legal card."""
+        # Get legal cards (simplified - just return any card)
+        exit()

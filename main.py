@@ -28,7 +28,7 @@ except ImportError:
             print("Error: Could not import GUI module")
             sys.exit(1)
 
-from example_bots import RandomBot, ConservativeBot, AggressiveBot
+from example_bots import RandomBot, ConservativeBot, AggressiveBot, ExitBot
 from player import Player
 
 
@@ -50,6 +50,7 @@ def create_competition_bots() -> List[Player]:
         RandomBot("RandomBot"),
         ConservativeBot("ConservativeBot"),
         AggressiveBot("AggressiveBot"),
+        ExitBot("ExitBot")
     ]
     
     # TODO: Add your custom bots here
